@@ -1,0 +1,545 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Caffè Dolce Vita</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: retro-chic Italian bar. Panna base, blush bands, espresso aperitivo band; arch-shaped photo frames echo a bar's vaulted niches. */
+:root{
+  --milk:#FFFDFB; --blush:#F8F1F1; --espresso:#1C1917;
+  --cherry:#C81E3A; --cherry-deep:#A31630;
+  --caramel:#B45309; --caramel-soft:#EDB070;
+  --ink:#2A2421; --muted:#6A5F59; --line:#EBDDDD; --line-dark:#3A322E;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Figtree','Helvetica Neue',Arial,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--milk);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--caramel);outline-offset:3px;border-radius:6px}
+.ic{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(56px,9vw,104px)}
+.band.blush{background:var(--blush)}
+.band.dark{background:var(--espresso);color:#F4ECE6}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);display:flex;align-items:center;gap:.6em}
+.dark .eyebrow{color:var(--caramel-soft)}
+.sec-head{display:grid;gap:14px;max-width:640px;margin-bottom:clamp(28px,5vw,48px)}
+.sec-head h2{font-size:clamp(1.9rem,5.2vw,3rem)}
+.sec-head p{color:var(--muted)}
+.dark .sec-head p{color:#CDBFB6}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:50px;padding:.7em 1.35em;border-radius:999px;border:2px solid transparent;font:inherit;font-weight:600;font-size:1rem;line-height:1.25;text-decoration:none;cursor:pointer;text-align:center;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn-primary{background:var(--cherry);color:#fff}
+.btn-primary:hover{background:var(--cherry-deep)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--milk)}
+.btn-soft{background:var(--blush);color:var(--ink)}
+.btn-soft:hover{background:#EFE2E2}
+.btn:active{transform:translateY(1px)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--milk);z-index:30}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,253,251,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.2rem;color:var(--cherry)}
+.brand .dot{width:30px;height:30px;border-radius:50%;background:var(--cherry);color:#fff;display:grid;place-items:center}
+.brand .dot .ic{width:16px;height:16px}
+.nav{display:none;gap:26px;font-weight:500;font-size:.95rem}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--cherry)}
+.top .btn{min-height:42px;padding:.45em 1.05em;font-size:.92rem}
+@media(min-width:820px){.nav{display:flex}}
+
+/* hero */
+.hero{padding-block:clamp(28px,6vw,72px) clamp(48px,8vw,96px)}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:.6em;padding:.55em 1em;border:1px solid var(--cherry);color:var(--cherry);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.09em;line-height:1.35;text-transform:uppercase;max-width:100%}
+.hero h1{font-size:clamp(2.35rem,8.4vw,4.6rem);margin-block:20px 18px}
+.hero h1 em{font-style:italic;color:var(--cherry);font-weight:600}
+.hero .sub{font-size:clamp(1.05rem,2.6vw,1.2rem);color:var(--muted);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.cta .btn{flex:1 1 230px}
+.status-pill{display:inline-flex;align-items:center;gap:.6em;margin-top:22px;font-size:.92rem;font-weight:600;color:var(--muted)}
+.pulse{width:10px;height:10px;border-radius:50%;background:#9A8F89;flex:none}
+.is-open .pulse{background:#2E8B57;box-shadow:0 0 0 0 rgba(46,139,87,.5);animation:pulse 2.2s infinite}
+.is-closed .pulse{background:var(--cherry)}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(46,139,87,0)}100%{box-shadow:0 0 0 0 rgba(46,139,87,0)}}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:64px}}
+
+/* photo frames */
+.frame{position:relative;overflow:hidden;background:var(--blush);margin:0}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame .ph{display:none;position:absolute;inset:0;place-items:center;align-content:center;gap:8px;text-align:center;padding:20px;color:var(--muted);font-size:.85rem;background:repeating-linear-gradient(45deg,#F8F1F1,#F8F1F1 14px,#F3E8E8 14px,#F3E8E8 28px)}
+.frame .ph .ic{width:28px;height:28px;color:var(--cherry)}
+.frame.noimg .ph{display:grid}
+.arch{border-radius:999px 999px 28px 28px;aspect-ratio:4/5;max-width:520px;margin-inline:auto;width:100%;box-shadow:0 0 0 8px var(--milk),0 0 0 10px var(--cherry)}
+.hero-photo-wrap{padding:12px}
+
+/* gallery */
+.gallery{display:grid;gap:28px}
+.shot figcaption,.shot .cap{padding-top:16px;display:grid;gap:6px}
+.shot h3{font-size:1.35rem}
+.shot p{color:var(--muted);font-size:.98rem}
+.shot .frame{border-radius:20px;aspect-ratio:4/3}
+@media(min-width:820px){
+  .gallery{grid-template-columns:1.4fr 1fr;grid-template-areas:"a b" "a c";gap:36px 32px}
+  .shot.a{grid-area:a}.shot.b{grid-area:b}.shot.c{grid-area:c}
+  .shot.a .frame{aspect-ratio:4/5}
+}
+
+/* moments */
+.moments{display:grid;gap:20px}
+.moment{background:var(--milk);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,4vw,34px);display:grid;gap:14px;align-content:start}
+.moment .when{font-family:var(--display);font-size:clamp(1.55rem,4vw,2rem);font-weight:600;color:var(--cherry);line-height:1}
+.moment .when small{display:block;font-family:var(--body);font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--caramel);margin-bottom:10px}
+.moment h3{font-size:1.5rem}
+.moment p{color:var(--muted)}
+.moment .ic-box{width:46px;height:46px;border-radius:14px;background:var(--blush);color:var(--cherry);display:grid;place-items:center}
+.moment.night{background:var(--espresso);border-color:var(--espresso);color:#F4ECE6}
+.moment.night .when{color:var(--caramel-soft)}
+.moment.night .when small{color:#CDBFB6}
+.moment.night p{color:#CDBFB6}
+.moment.night .ic-box{background:#2B2420;color:var(--caramel-soft)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tags span{font-size:.82rem;font-weight:600;padding:.3em .8em;border-radius:999px;border:1px solid var(--line-dark);color:#E7DAD1}
+@media(min-width:900px){.moments{grid-template-columns:repeat(3,1fr)}}
+
+/* booking */
+.book-grid{display:grid;gap:36px}
+.book-side{display:grid;gap:18px;align-content:start}
+.book-side h2{font-size:clamp(1.9rem,5vw,2.9rem)}
+.book-side p{color:#CDBFB6}
+.keypoints{display:grid;gap:12px;margin-top:6px;padding:0;list-style:none}
+.keypoints li{display:flex;gap:12px;align-items:flex-start;color:#E7DAD1;font-size:.98rem}
+.keypoints .ic{color:var(--caramel-soft);margin-top:.25em}
+form.card{background:var(--milk);color:var(--ink);border-radius:28px;padding:clamp(20px,4vw,34px);display:grid;gap:26px}
+fieldset{border:0;margin:0;padding:0;min-width:0;display:grid;gap:14px}
+legend{padding:0;display:flex;gap:12px;align-items:center;font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:14px}
+legend .n{width:30px;height:30px;border-radius:50%;background:var(--cherry);color:#fff;display:grid;place-items:center;font-family:var(--body);font-weight:700;font-size:.9rem;flex:none}
+.choices{display:grid;gap:10px}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice span{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid var(--line);border-radius:16px;font-weight:600;background:#fff;transition:border-color .2s,background .2s}
+.choice span .ic{color:var(--cherry)}
+.choice small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.choice input:checked+span{border-color:var(--cherry);background:#FFF4F5;box-shadow:0 0 0 1px var(--cherry) inset}
+.choice input:focus-visible+span{outline:3px solid var(--caramel);outline-offset:2px}
+.fields{display:grid;gap:14px}
+.field{display:grid;gap:6px;min-width:0}
+label,.lbl{font-size:.88rem;font-weight:600}
+input[type=text],input[type=date],select,textarea{width:100%;min-width:0;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:.8em .95em;min-height:50px}
+textarea{min-height:92px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(180,83,9,.35);border-color:var(--caramel)}
+.persons{display:flex;flex-wrap:wrap;gap:8px}
+.persons .choice{flex:1 1 56px}
+.persons .choice span{justify-content:center;padding:12px 8px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:var(--muted)}
+.consent input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--cherry);flex:none}
+.consent a{color:var(--cherry);font-weight:600}
+.msg-err{color:var(--cherry-deep);font-weight:600;font-size:.92rem;min-height:1.3em}
+.result{display:none;background:var(--blush);border-radius:18px;padding:18px;gap:12px}
+.result.show{display:grid}
+.result pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--body);font-size:.92rem;color:var(--ink);background:#fff;border-radius:12px;padding:14px;border:1px solid var(--line)}
+.result .hint{font-size:.88rem;color:var(--muted)}
+@media(min-width:640px){.fields.two{grid-template-columns:1fr 1fr}.choices.three{grid-template-columns:1fr}}
+@media(min-width:960px){.book-grid{grid-template-columns:.8fr 1.2fr;gap:64px}.book-side{position:sticky;top:96px}}
+
+/* where */
+.where-grid{display:grid;gap:32px}
+.panel{background:var(--milk);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,4vw,32px);display:grid;gap:18px;align-content:start}
+.panel h3{font-size:1.4rem;display:flex;align-items:center;gap:.6em}
+.panel h3 .ic{color:var(--cherry)}
+.live{display:inline-flex;align-items:center;gap:.6em;padding:.5em 1em;border-radius:999px;font-weight:700;font-size:.9rem;width:fit-content;background:var(--blush)}
+.live.is-open{background:#E6F3EB;color:#1E6B42}
+.live.is-closed{background:#FBE7EA;color:var(--cherry-deep)}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:13px 0;border-bottom:1px solid var(--line);font-size:1rem}
+th{font-weight:600}
+td{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+tr.today th,tr.today td{color:var(--cherry);font-weight:700}
+tr.today td::after{content:" · oggi";font-weight:600}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.contacts{display:grid;gap:14px;padding:0;margin:0;list-style:none}
+.contacts li{display:flex;gap:12px;align-items:flex-start}
+.contacts .ic{color:var(--cherry);margin-top:.3em}
+.contacts a{font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--line)}
+.contacts a:hover{border-color:var(--cherry);color:var(--cherry)}
+.map-box{border-radius:20px;overflow:hidden;background:var(--blush);min-height:300px;display:grid;place-items:center;text-align:center;padding:24px;gap:14px;border:1px solid var(--line)}
+.map-box iframe{width:100%;height:340px;border:0;display:block}
+.map-box.loaded{padding:0;display:block}
+.map-box p{color:var(--muted);font-size:.92rem;max-width:30em}
+.map-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+@media(min-width:900px){.where-grid{grid-template-columns:1fr 1.15fr;gap:40px}.where-grid .span{grid-column:1/-1}}
+
+/* privacy */
+.privacy{max-width:760px}
+.privacy details{border-top:1px solid var(--line)}
+.privacy details:last-of-type{border-bottom:1px solid var(--line)}
+.privacy summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.privacy summary::-webkit-details-marker{display:none}
+.privacy summary::after{content:"+";font-size:1.4rem;color:var(--cherry);line-height:1}
+.privacy details[open] summary::after{content:"–"}
+.privacy details div{padding:0 0 20px;color:var(--muted);display:grid;gap:10px;font-size:.98rem}
+.privacy ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+
+/* footer */
+footer{background:var(--espresso);color:#CDBFB6;padding-block:48px max(40px,env(safe-area-inset-bottom,0px));font-size:.95rem}
+.foot{display:grid;gap:28px}
+.foot .brand{color:#F4ECE6}
+.foot a{text-decoration:none;border-bottom:1px solid var(--line-dark)}
+.foot a:hover{color:#fff;border-color:var(--caramel-soft)}
+.foot small{color:#9B8E86}
+@media(min-width:760px){.foot{grid-template-columns:1.2fr 1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+  <symbol id="i-wine" viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot"><svg class="ic"><use href="#i-coffee"/></svg></span>Caffè Dolce Vita</a>
+    <nav class="nav" aria-label="Principale">
+      <a href="#locale">Il locale</a>
+      <a href="#proposte">Colazioni &amp; Aperitivi</a>
+      <a href="#prenota">Prenota</a>
+      <a href="#dove">Orari &amp; Dove</a>
+    </nav>
+    <a class="btn btn-primary" href="#prenota">Prenota</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Via Oriani 28/A · Calcinelli (Colli al Metauro) · Aperti dalle 05:00</span>
+      <h1>Caffè Dolce Vita — <em>Buone colazioni</em> e ricchi aperitivi nel cuore di Calcinelli.</h1>
+      <p class="sub">Dal primo caffè del mattino alle 05:00 con brioche calde fino all'aperitivo serale con taglieri, cocktail e il sorriso di chi ti fa sentire sempre a casa.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#prenota"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Prenota Tavolo Aperitivo su WhatsApp</a>
+        <a class="btn btn-ghost" href="#proposte"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg>Scopri Colazioni &amp; Aperitivi</a>
+        <a class="btn btn-soft" href="tel:+393316487646"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Chiama (331 648 7646)</a>
+      </div>
+      <div class="status-pill" id="heroStatus" aria-live="polite"><span class="pulse"></span><span id="heroStatusText">Controllo gli orari…</span></div>
+    </div>
+    <div class="hero-photo-wrap">
+      <figure class="frame arch">
+        <img src="img/sala.jpg" alt="La sala luminosa di Caffè Dolce Vita con tavolini, vetrate e jukebox vintage" fetchpriority="high" onerror="this.parentElement.classList.add('noimg');this.remove()">
+        <span class="ph"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg>Inserisci la foto della sala:<br><strong>img/sala.jpg</strong></span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band blush" id="locale">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Il locale</span>
+      <h2>Un bar di paese, luminoso e di famiglia.</h2>
+      <p>Qui si entra per un caffè al volo e si resta per due chiacchiere. Tre immagini per conoscerci prima di venire a trovarci.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot a" style="margin:0">
+        <div class="frame"><img src="img/sala.jpg" alt="Sala con tavolini alti, vetrate luminose e jukebox vintage" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"><span class="ph"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg>img/sala.jpg</span></div>
+        <figcaption><h3>La Sala &amp; Il Jukebox Vintage</h3><p>Ambiente luminoso, tavolini alti per la pausa caffè o l'aperitivo tra amici e dettagli retrò unici.</p></figcaption>
+      </figure>
+      <figure class="shot b" style="margin:0">
+        <div class="frame"><img src="img/staff.jpg" alt="Lo staff di Caffè Dolce Vita sorride dietro il bancone" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"><span class="ph"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg>img/staff.jpg</span></div>
+        <figcaption><h3>Il Sorriso Dietro il Bancone</h3><p>Accoglienza calorosa, atmosfera familiare e attenzione per ogni cliente, dal caffè al volo della mattina fino a sera.</p></figcaption>
+      </figure>
+      <figure class="shot c" style="margin:0">
+        <div class="frame"><img src="img/brand.jpg" alt="La bustina di zucchero con il marchio Caffè Dolce Vita" loading="lazy" onerror="this.parentElement.classList.add('noimg');this.remove()"><span class="ph"><svg class="ic" aria-hidden="true"><use href="#i-image"/></svg>img/brand.jpg</span></div>
+        <figcaption><h3>La Nostra Firma dal Mattino alla Sera</h3><p>Buone colazioni e ricchi aperitivi, una tradizione quotidiana in Via Oriani 28/A.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="proposte">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Tre momenti, ogni giorno</span>
+      <h2>Dal primo caffè all'ultimo spritz.</h2>
+      <p>Cambiano le ore, resta la stessa cura. Scegli il momento della tua giornata.</p>
+    </div>
+    <div class="moments">
+      <article class="moment">
+        <div class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg></div>
+        <div class="when"><small>Mattina</small>05:00 – 11:30</div>
+        <h3>Buone Colazioni</h3>
+        <p>Caffetteria espressa, cappuccini cremosi, cornetti e brioche fresche ogni mattina già dalle 5:00 per lavoratori, studenti e famiglie.</p>
+      </article>
+      <article class="moment">
+        <div class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-utensils"/></svg></div>
+        <div class="when"><small>Pausa pranzo</small>12:00 – 15:00</div>
+        <h3>Pausa Pranzo &amp; Snack</h3>
+        <p>Panini farciti al momento, piadine, tramezzini e snack veloci per una pausa gustosa a Calcinelli.</p>
+      </article>
+      <article class="moment night">
+        <div class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-wine"/></svg></div>
+        <div class="when"><small>Aperitivo</small>17:30 – 20:00</div>
+        <h3>Ricchi Aperitivi</h3>
+        <p>Calici di vino del territorio, spritz, cocktail classici e analcolici accompagnati da ricchi taglieri e stuzzicheria espressa.</p>
+        <div class="tags"><span>Vino del territorio</span><span>Spritz</span><span>Taglieri</span><span>Analcolici</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="prenota">
+  <div class="wrap book-grid">
+    <div class="book-side">
+      <span class="eyebrow">Prenotazione rapida</span>
+      <h2>Prenota in tre passaggi, rispondiamo su WhatsApp.</h2>
+      <p>Compili la richiesta, si apre WhatsApp con il messaggio già pronto e lo invii al 331 648 7646. Ti confermiamo appena possibile.</p>
+      <ul class="keypoints">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Nessun account e nessuna registrazione.</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>I tuoi dati restano nel tuo dispositivo fino all'invio.</li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Il lunedì siamo aperti solo la mattina, fino alle 12:00.</li>
+      </ul>
+    </div>
+
+    <form class="card" id="bookForm" novalidate>
+      <fieldset>
+        <legend><span class="n">1</span>Cosa vuoi prenotare</legend>
+        <div class="choices three">
+          <label class="choice"><input type="radio" name="servizio" value="Aperitivo & Taglieri" checked><span><svg class="ic" aria-hidden="true"><use href="#i-wine"/></svg><b>Aperitivo &amp; Taglieri</b></span></label>
+          <label class="choice"><input type="radio" name="servizio" value="Tavolo Colazione / Gruppo"><span><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><b>Tavolo Colazione / Gruppo</b></span></label>
+          <label class="choice"><input type="radio" name="servizio" value="Vassoio Brioche / Asporto"><span><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg><b>Vassoio Brioche / Asporto</b></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="n">2</span>Giorno, orario e ospiti</legend>
+        <div class="fields two">
+          <div class="field"><label for="data">Giorno</label><input type="date" id="data" name="data" required></div>
+          <div class="field"><label for="fascia">Fascia oraria</label>
+            <select id="fascia" name="fascia">
+              <option value="Mattina 05:00–11:30">Mattina 05:00–11:30</option>
+              <option value="Pausa Pranzo 12:00–15:00">Pausa Pranzo 12:00–15:00</option>
+              <option value="Aperitivo 17:30–20:00" selected>Aperitivo 17:30–20:00</option>
+            </select></div>
+        </div>
+        <div class="field">
+          <span class="lbl" id="persLbl">Numero persone</span>
+          <div class="persons" role="radiogroup" aria-labelledby="persLbl">
+            <label class="choice"><input type="radio" name="persone" value="2" checked><span>2</span></label>
+            <label class="choice"><input type="radio" name="persone" value="3"><span>3</span></label>
+            <label class="choice"><input type="radio" name="persone" value="4"><span>4</span></label>
+            <label class="choice"><input type="radio" name="persone" value="5"><span>5</span></label>
+            <label class="choice"><input type="radio" name="persone" value="6+"><span>6+</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="n">3</span>Nome e invio diretto</legend>
+        <div class="field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="given-name" placeholder="Il tuo nome" required></div>
+        <div class="field"><label for="note">Note (facoltative)</label><textarea id="note" name="note" placeholder="Es. seggiolone, intolleranze, tagliere per due…"></textarea></div>
+        <label class="consent"><input type="checkbox" id="privacy" required><span>Ho letto l'<a href="#privacy-info">informativa privacy</a> e acconsento a usare questi dati solo per preparare il messaggio WhatsApp.</span></label>
+        <p class="msg-err" id="err" role="alert" aria-live="assertive"></p>
+        <button class="btn btn-primary" type="submit"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Invia Richiesta su WhatsApp (331 648 7646)</button>
+      </fieldset>
+
+      <div class="result" id="result" aria-live="polite">
+        <strong>Messaggio pronto</strong>
+        <pre id="preview"></pre>
+        <a class="btn btn-primary" id="waLink" href="https://wa.me/393316487646" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg>Apri WhatsApp</a>
+        <p class="hint">Se WhatsApp non si apre da solo, tocca il pulsante qui sopra. La prenotazione è valida solo dopo la nostra conferma.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="band blush" id="dove">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Orari &amp; Dove siamo</span>
+      <h2>Ti aspettiamo in Via Oriani.</h2>
+      <p>Aperti ogni giorno dalle 05:00. Il lunedì chiudiamo a mezzogiorno.</p>
+    </div>
+    <div class="where-grid">
+      <div class="panel">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Orari</h3>
+        <div class="live" id="liveBadge" aria-live="polite"><span class="pulse"></span><span id="liveText">Controllo…</span></div>
+        <table>
+          <tbody>
+            <tr data-days="1"><th scope="row">Lunedì</th><td>05:00 – 12:00</td></tr>
+            <tr data-days="2,3,4,5,6,0"><th scope="row">Martedì – Domenica</th><td>05:00 – 20:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h3><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Contatti</h3>
+        <ul class="contacts">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span>Via Alfredo Oriani, 28/A<br>Calcinelli, 61036 Colli al Metauro (PU)</span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span>Tel / WhatsApp: <a href="tel:+393316487646">331 648 7646</a></span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-fb"/></svg><span>Facebook: <a href="https://www.facebook.com/search/top?q=Caff%C3%A8%20Dolce%20Vita%20Calcinelli" target="_blank" rel="noopener">Caffè Dolce Vita</a></span></li>
+        </ul>
+      </div>
+      <div class="panel span">
+        <div class="map-box" id="mapBox">
+          <svg class="ic" style="width:32px;height:32px;color:var(--cherry)" aria-hidden="true"><use href="#i-pin"/></svg>
+          <p>La mappa di Google si carica solo se lo scegli tu. Finché non la apri, nessun dato viene inviato a Google.</p>
+          <div class="map-actions">
+            <button class="btn btn-primary" type="button" id="mapBtn">Carica la mappa</button>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Via+Alfredo+Oriani+28%2FA+Calcinelli+Colli+al+Metauro" target="_blank" rel="noopener">Apri su Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="privacy-info">
+  <div class="wrap privacy">
+    <div class="sec-head" style="margin-bottom:24px">
+      <span class="eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Privacy</span>
+      <h2>Informativa privacy (GDPR)</h2>
+      <p>In breve: nessun cookie di profilazione e nessun dato salvato sui nostri server.</p>
+    </div>
+    <details open><summary>Titolare del trattamento</summary><div><p>Caffè Dolce Vita, Via Alfredo Oriani 28/A, 61036 Calcinelli, Colli al Metauro (PU). Per qualsiasi richiesta sui tuoi dati puoi scriverci su WhatsApp o chiamare il 331 648 7646.</p></div></details>
+    <details><summary>Quali dati usiamo e perché</summary><div>
+      <p>Compilando il modulo di prenotazione inserisci nome, giorno, fascia oraria, numero di persone ed eventuali note. Questi dati servono esclusivamente a comporre il testo del messaggio WhatsApp.</p>
+      <ul><li>Il testo viene creato nel tuo browser.</li><li>Non viene inviato a nessun server del sito e non viene memorizzato.</li><li>Il messaggio parte solo quando premi il pulsante di invio in WhatsApp.</li></ul>
+      <p>Base giuridica: il tuo consenso (art. 6, par. 1, lett. a GDPR) e, per gestire la prenotazione richiesta, l'esecuzione di misure precontrattuali (lett. b).</p></div></details>
+    <details><summary>Cookie e strumenti di terze parti</summary><div>
+      <p>Questo sito non usa cookie di profilazione né strumenti di analisi o pubblicità. Non salviamo dati nel tuo dispositivo.</p>
+      <ul><li><b>Google Maps:</b> si carica solo dopo il tuo clic su «Carica la mappa». Da quel momento Google può trattare dati secondo la propria informativa.</li><li><b>WhatsApp (Meta):</b> quando invii il messaggio, i dati sono trattati da WhatsApp secondo la sua informativa.</li><li><b>Caratteri tipografici:</b> sono caricati da Google Fonts.</li></ul></div></details>
+    <details><summary>Conservazione e diritti</summary><div>
+      <p>Il messaggio WhatsApp che ci invii viene conservato solo il tempo necessario a gestire la prenotazione.</p>
+      <p>Puoi chiedere accesso, rettifica, cancellazione, limitazione, portabilità e opposizione (artt. 15–22 GDPR), e revocare il consenso in ogni momento. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).</p></div></details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#top" style="border:0"><span class="dot"><svg class="ic"><use href="#i-coffee"/></svg></span>Caffè Dolce Vita</a>
+      <p style="margin-top:14px;max-width:26em">Buone colazioni e ricchi aperitivi nel cuore di Calcinelli.</p>
+    </div>
+    <div>
+      <p>Via Alfredo Oriani, 28/A<br>Calcinelli, 61036 Colli al Metauro (PU)</p>
+      <p style="margin-top:10px">Tel / WhatsApp: <a href="tel:+393316487646">331 648 7646</a></p>
+    </div>
+    <div>
+      <p>Lun 05:00 – 12:00<br>Mar – Dom 05:00 – 20:00</p>
+      <p style="margin-top:10px"><a href="#privacy-info">Informativa privacy</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var TZ='Europe/Rome';
+  var DAYS=['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+  var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  function hours(d){return d===1?[300,720]:[300,1200];}
+  function hm(m){var h=Math.floor(m/60),mm=m%60;return (h<10?'0':'')+h+':'+(mm<10?'0':'')+mm;}
+  function romeNow(){
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var o={};parts.forEach(function(p){o[p.type]=p.value;});
+    return {day:WD[o.weekday],min:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+  }
+  function status(){
+    var n=romeNow(),h=hours(n.day);
+    if(n.min>=h[0]&&n.min<h[1]){
+      var left=h[1]-n.min;
+      return {open:true,text:left<=30?'Aperto ora · chiude tra poco ('+hm(h[1])+')':'Aperto ora · chiude alle '+hm(h[1])};
+    }
+    if(n.min<h[0]) return {open:false,text:'Chiuso · apre oggi alle '+hm(h[0])};
+    var nd=(n.day+1)%7,nh=hours(nd);
+    return {open:false,text:'Chiuso · riapre '+(nd===(n.day+1)%7?'domani':DAYS[nd])+' alle '+hm(nh[0])};
+  }
+  function paint(){
+    var s=status(),cls=s.open?'is-open':'is-closed';
+    var hs=document.getElementById('heroStatus'),lb=document.getElementById('liveBadge');
+    hs.className='status-pill '+cls;lb.className='live '+cls;
+    document.getElementById('heroStatusText').textContent=s.text;
+    document.getElementById('liveText').textContent=s.open?'Aperto ora':s.text;
+    var d=String(romeNow().day);
+    document.querySelectorAll('tr[data-days]').forEach(function(tr){
+      tr.classList.toggle('today',tr.getAttribute('data-days').split(',').indexOf(d)>-1);
+    });
+  }
+  paint();setInterval(paint,30000);
+
+  /* booking */
+  var form=document.getElementById('bookForm'),err=document.getElementById('err');
+  var data=document.getElementById('data'),fascia=document.getElementById('fascia');
+  try{data.min=new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date());}catch(e){}
+  var fasciaFor={'Aperitivo & Taglieri':'Aperitivo 17:30–20:00','Tavolo Colazione / Gruppo':'Mattina 05:00–11:30','Vassoio Brioche / Asporto':'Mattina 05:00–11:30'};
+  form.querySelectorAll('input[name=servizio]').forEach(function(r){
+    r.addEventListener('change',function(){fascia.value=fasciaFor[r.value];});
+  });
+  function val(n){var el=form.querySelector('input[name='+n+']:checked');return el?el.value:'';}
+  function longDate(iso){
+    var p=iso.split('-').map(Number);
+    return new Date(Date.UTC(p[0],p[1]-1,p[2],12)).toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+  }
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();err.textContent='';
+    var nome=document.getElementById('nome').value.trim();
+    if(!data.value){err.textContent='Scegli il giorno della prenotazione.';data.focus();return;}
+    if(data.min&&data.value<data.min){err.textContent='Il giorno scelto è già passato. Scegli una data da oggi in poi.';data.focus();return;}
+    var p=data.value.split('-').map(Number);
+    var dow=new Date(Date.UTC(p[0],p[1]-1,p[2],12)).getUTCDay();
+    if(dow===1&&fascia.value.indexOf('Mattina')!==0){err.textContent='Il lunedì siamo aperti solo dalle 05:00 alle 12:00. Scegli la fascia Mattina o un altro giorno.';fascia.focus();return;}
+    if(!nome){err.textContent='Scrivi il tuo nome.';document.getElementById('nome').focus();return;}
+    if(!document.getElementById('privacy').checked){err.textContent='Per procedere serve il consenso alla privacy.';document.getElementById('privacy').focus();return;}
+    var note=document.getElementById('note').value.trim();
+    var lines=['Ciao Caffè Dolce Vita! Vorrei prenotare:',
+      '• Cosa: '+val('servizio'),
+      '• Giorno: '+longDate(data.value),
+      '• Fascia: '+fascia.value,
+      '• Persone: '+val('persone'),
+      '• Nome: '+nome];
+    if(note)lines.push('• Note: '+note);
+    lines.push('Grazie!');
+    var text=lines.join('\n');
+    var url='https://wa.me/393316487646?text='+encodeURIComponent(text);
+    document.getElementById('preview').textContent=text;
+    var a=document.getElementById('waLink');a.href=url;
+    var r=document.getElementById('result');r.classList.add('show');
+    r.scrollIntoView({behavior:'smooth',block:'nearest'});
+    try{a.click();}catch(e){}
+  });
+
+  /* map on click */
+  document.getElementById('mapBtn').addEventListener('click',function(){
+    var box=document.getElementById('mapBox');
+    var f=document.createElement('iframe');
+    f.src='https://www.google.com/maps?q=Via+Alfredo+Oriani+28/A+Calcinelli+Colli+al+Metauro&output=embed';
+    f.title='Mappa di Caffè Dolce Vita, Via Alfredo Oriani 28/A, Calcinelli';
+    f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';f.setAttribute('allowfullscreen','');
+    box.innerHTML='';box.classList.add('loaded');box.appendChild(f);
+  });
+})();
+</script>
+
+</body></html>
